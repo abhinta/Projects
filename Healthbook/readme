@@ -1,0 +1,81 @@
+"SMS file is purposely removed. Kindly purchase your own sms services"
+
+NOTE:
+1. abhinav == Abhinav for database
+2.
+pintable and citytable are independent databases.
+Think in terms of application, patient searches a doctor on the basis of city or pin or both. But, there can be spelling difference in cities of both dbs.
+
+
+pincode db doesn't have :
+Telangana...skipped
+Odisha...altered
+Ladakh...skipped
+//Andaman & Nicobar Islands...altered
+Lakshadweep replaced from laskhdweep
+
+pincode db is independent of state btw...so no worries
+
+cities doesn't have :
+Telangana...skipped
+Lakshdweep...Lakshadweep
+Odisha...altered
+Ladakh...skipped
+
+
+Ideal list of States and UT's
+
+"Andaman & Nicobar Islands",
+"Andhra Pradesh",
+"Arunachal Pradesh",
+"Assam",
+"Bihar",
+"Chandigarh",
+"Chhattisgarh",
+"Dadra & Nagar Haveli",
+"Daman & Diu",
+"Delhi",
+"Goa",
+"Gujarat",
+"Haryana",
+"Himachal Pradesh",
+"Jammu & Kashmir",
+"Jharkhand",
+"Karnataka",
+"Kerala",
+"Ladakh",
+"Lakshdweep",
+"Madhya Pradesh",
+"Maharashtra",
+"Manipur",
+"Meghalaya",
+"Mizoram",
+"Nagaland",
+"Odisha",
+"Pondicherry",
+"Punjab",
+"Rajasthan",
+"Sikkim",
+"Tamil Nadu",
+"Telangana",
+"Tripura",
+"Uttar Pradesh",
+"Uttarakhand",
+"West Bengal"
+
+Manager files are accessable though bracket only
+
+Problems:
+    SOLVED 1. responsive nature of dashboard-patient
+Checkups:
+    1. do check responsive nature of full project front-end
+
+
+A (Possible) amendment in file uploading can be done as:
+1. separate folders for slips, doctor profile pics, certi ppics, etc.
+2. To avoid overwriting of images with same name...a query can be executed telling no. of images with same name (like query 14105.jpg, 14105(1).jpg, 14105(2).jpg)...(ans would be either 0 or more) -> solution: attach ($count+1) with this image
+    2.1.But we need to take care at databse side of the length of (say) ppic -> if it was originally 40 characters, make it 43 maybe; although asking users to input length of 40 only
+3. Whenever person inputs a number...it may include 'e'
+    3.1. first database must have varchar length extended
+    3.2. or simply give error if the string is in scientific notation
+4. When we input sugar results, we can ask user to switch between units
